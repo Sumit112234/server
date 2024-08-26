@@ -2,6 +2,7 @@ require('dotenv').config();
 // const Meaning = require('../models/meaning');
 const {GoogleGenerativeAI} = require('@google/generative-ai');
 const Meaning = require('./model/meaning');
+const bodyParser = require('body-parser');
 const moment = require('moment');
 const express = require('express');
 const mongoose = require('mongoose');
@@ -13,6 +14,7 @@ const router = express.Router();
 const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(cors());
+app.use(bodyParser.json());  
 
 
 
